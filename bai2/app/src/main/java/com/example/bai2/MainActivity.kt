@@ -15,9 +15,8 @@ class MainActivity : AppCompatActivity() {
         val radioGroup = findViewById<RadioGroup>(R.id.radioGroup)
         val showButton = findViewById<Button>(R.id.btnShow)
         val listView = findViewById<ListView>(R.id.listView)
-        val txt1 = findViewById<TextView>(R.id.txt1) // TextView hiển thị thông báo
+        val txt1 = findViewById<TextView>(R.id.txt1)
 
-        // Ban đầu ẩn ListView và TextView
         listView.visibility = View.GONE
         txt1.visibility = View.GONE
 
@@ -54,13 +53,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (numbers.isNotEmpty()) {
-                // Có dữ liệu: ẩn txt1 và hiển thị listView
+
                 txt1.visibility = View.GONE
                 listView.visibility = View.VISIBLE
                 val adapter = ArrayAdapter(this, R.layout.item, R.id.textViewItem, numbers)
                 listView.adapter = adapter
             } else {
-                // Không có dữ liệu phù hợp: ẩn listView và hiển thị txt1
                 txt1.text = "Không có số nào phù hợp"
                 txt1.visibility = View.VISIBLE
                 listView.visibility = View.GONE
