@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.student_room.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_addStudent"
+            app:destination="@id/addStudent" />
+        <action
+            android:id="@+id/action_home2_to_editStudent"
+            app:destination="@id/editStudent" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addStudent"
+        android:name="com.example.student_room.AddStudent"
+        android:label="fragment_add_student"
+        tools:layout="@layout/fragment_add_student" />
+    <fragment
+        android:id="@+id/editStudent"
+        android:name="com.example.student_room.EditStudent"
+        android:label="fragment_edit_student"
+        tools:layout="@layout/fragment_edit_student" />
+</navigation>
